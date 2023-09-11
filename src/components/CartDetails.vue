@@ -41,36 +41,5 @@
                 </div>
             </div>
         </div>
-
-        <div class="cart__details-footer">
-            <div class="cartDetails__footer-topbar">
-                <ul>
-                    <li>TOTAL ITEMS</li>
-                    <li>1 (1)</li>
-                    <li>TOTAL</li>
-                    <li>100.00</li>
-                </ul>
-            </div>
-            <div class="cartDetails__footer-discount">
-                <li>DISCOUNT</li>
-                <div>0</div>
-                <li>TAX AMOUNT (%)</li>
-                <div>0</div>
-            </div>
-            <div class="cartDetails__footer-shipping">
-                <li>DISCOUNT</li>
-                <div>0</div>
-                <li>TAX AMOUNT (%)</li>
-                <div>0</div>
-            </div>
-            <div class="cartDetails__footer-bottombar">
-                <ul>
-                    <li>TOTAL ITEMS</li>
-                    <li>1 (1)</li>
-                    <li>TOTAL</li>
-                    <li>100.00</li>
-                </ul>
-            </div>
-        </div>
     </div>
 </template>
