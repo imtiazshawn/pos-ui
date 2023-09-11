@@ -3,18 +3,18 @@
     "id": 1,
     "name": "Banana",
     "image": "/banana.png",
-    "price": 1.99
+    "price": 9.50
   },
   {
     "id": 2,
     "name": "Apple",
     "image": "/apple.png",
-    "price": 2.49
+    "price": 25.80
   },
   {
     "id": 3,
     "name": "Orange",
     "image": "/orange.png",
-    "price": 1.79
+    "price": 21.45
   }
 ]

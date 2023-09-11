@@ -9,12 +9,16 @@
 </template>
 
 <script>
+import { useCartStore } from '@/stores/cart.js';
+
 export default {
   props: {
     product: Object,
   },
   methods: {
     addToCart(product) {
+      const cartStore = useCartStore();
+      cartStore.addToCart(product);
       console.log('Product added to cart:', product);
     },
   },
