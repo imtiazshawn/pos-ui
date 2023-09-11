@@ -30,6 +30,12 @@ export default {
             return cartStore.cart;
         },
     },
+    created() {
+      const cartStore = useCartStore();
+      if (cartStore.cart.length === 0) {
+        cartStore.loadCartData();
+      }
+    },
     components: { CartedProduct }
 };
 </script>
