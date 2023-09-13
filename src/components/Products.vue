@@ -21,10 +21,8 @@
     <!-- Products Footer -->
     <div class="products__footer">
         <div class="products__footer-div">
-            <h2 class="products__footer-amount">$250.00</h2>
-            <span class="products__footer-date">
-                2023-06-03
-            </span>
+            <h2 class="products__footer-amount">৳ {{ subtotal }}</h2>
+            <input ref="dateInput" id="date-input" type="text" class="products__footer-date" placeholder="yyyy-mm-dd">
             <svg class="products__footer-message" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="#ffffff" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12Z"/>
             </svg>
@@ -34,25 +32,43 @@
 
 
 <script>
-import Product from './Product.vue'
+import Product from './Product.vue';
 import productsData from '../api/products.json';
+import { useCartStore } from '@/stores/cart';
+import DatePicker from 'vue3-datepicker';
 
 export default {
-    components: {
-        Product,
+  components: {
+    Product,
+    DatePicker,
+  },
+  data() {
+    return {
+      products: productsData,
+      selectedDate: null,
+    };
+  },
+  computed: {
+    subtotal() {
+      const cartStore = useCartStore();
+      return cartStore.subtotal;
     },
-    data() {
-        return {
-        products: productsData,
-        };
+  },
+  props: {
+    product: Object,
+  },
+  mounted() {
+    this.initDatePicker();
+  },
+  methods: {
+    addToCart(product) {
+      console.log('Product added to cart:', product);
     },
-    props: {
-        product: Object,
-    },
-    methods: {
-        addToCart(product) {
-        console.log('Product added to cart:', product);
-        },
-    },
+    initDatePicker() {
+        flatpickr(this.$refs.dateInput, {
+            dateFormat: 'Y-m-d'
+        });
+    }
+  },
 };
 </script>
