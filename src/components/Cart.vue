@@ -37,7 +37,7 @@
                     <li>TOTAL ITEMS</li>
                     <li>{{ cartItemCount }}</li>
                     <li>TOTAL</li>
-                    <li>100.00</li>
+                    <li>{{ subtotal }}</li>
                 </ul>
             </div>
             <div class="cartDetails__footer-discount">
