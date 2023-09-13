@@ -35,7 +35,7 @@
             <div class="cartDetails__footer-topbar">
                 <ul>
                     <li>TOTAL ITEMS</li>
-                    <li>1 (1)</li>
+                    <li>{{ cartItemCount }}</li>
                     <li>TOTAL</li>
                     <li>100.00</li>
                 </ul>
@@ -54,8 +54,8 @@
             </div>
             <div class="cartDetails__footer-bottombar">
                 <ul>
-                    <li>TOTAL ITEMS</li>
-                    <li>1 (1)</li>
+                    <li></li>
+                    <li></li>
                     <li>TOTAL</li>
                     <li>100.00</li>
                 </ul>
@@ -78,6 +78,28 @@
     </div>
 </template>
 
-<script setup>
-  import CartDetails from './CartDetails.vue'
+<script>
+import CartDetails from './CartDetails.vue';
+import { useCartStore } from '@/stores/cart';
+
+export default {
+  components: {
+    CartDetails,
+  },
+  computed: {
+    cartData() {
+      const cartStore = useCartStore();
+      return cartStore.cart;
+    },
+    cartItemCount() {
+      const cartStore = useCartStore();
+      return cartStore.cart.length;
+    },
+
+    subtotal() {
+      const cartStore = useCartStore();
+      return cartStore.subtotal;
+    },
+  },
+};
 </script>
