@@ -18,7 +18,17 @@ export default {
   methods: {
     addToCart(product) {
       const cartStore = useCartStore();
-      cartStore.addToCart(product);
+      const existingProduct = cartStore.cart.find((item) => item.id === product.id);
+
+      if (existingProduct) {
+        cartStore.updateQuantity(existingProduct, existingProduct.quantity + 1);
+      } else {
+        cartStore.addToCart({
+          ...product,
+          quantity: 1,
+        });
+      }
+
       console.log('Product added to cart:', product);
     },
   },

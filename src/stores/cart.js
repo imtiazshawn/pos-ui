@@ -44,5 +44,13 @@ export const useCartStore = defineStore('cart', {
       this.subtotal = total.toFixed(2);
       console.log(this.subtotal);
     },
+    updateQuantity(product, newQuantity) {
+      const existingProduct = this.cart.find((item) => item.id === product.id);
+      if (existingProduct) {
+        existingProduct.quantity = newQuantity;
+        this.saveCartData();
+        this.updateSubtotal();
+      }
+    },
   },
 });

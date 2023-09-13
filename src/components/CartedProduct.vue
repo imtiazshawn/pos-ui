@@ -64,6 +64,10 @@ export default {
         this.addToCart();
       }
     },
+    addToCart() {
+      const cartStore = useCartStore();
+      cartStore.updateQuantity(this.product, this.quantity);
+    },
     removeFromCart(product) {
       const cartStore = useCartStore();
       cartStore.removeFromCart(product);
