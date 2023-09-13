@@ -16,5 +16,53 @@
     "name": "Orange",
     "image": "/orange.png",
     "price": 21.45
+  },
+  {
+    "id": 4,
+    "name": "Pine Apple",
+    "image": "/pineapple.png",
+    "price": 121.50
+  },
+  {
+    "id": 5,
+    "name": "Grapes",
+    "image": "/red_grapes.png",
+    "price": 161.30
+  },
+  {
+    "id": 6,
+    "name": "Watermelon",
+    "image": "/watermelon.png",
+    "price": 241.55
+  },
+  {
+    "id": 7,
+    "name": "Pomegranate",
+    "image": "/pomegranate.png",
+    "price": 29.35
+  },
+  {
+    "id": 8,
+    "name": "Strawberry",
+    "image": "/strawberry.png",
+    "price": 34.68
+  },
+  {
+    "id": 9,
+    "name": "Mango",
+    "image": "/mango.png",
+    "price": 53.28
+  },
+  {
+    "id": 10,
+    "name": "Lemon",
+    "image": "/lemon.png",
+    "price": 5.10
+  },
+  {
+    "id": 11,
+    "name": "Cherry",
+    "image": "/cherry.png",
+    "price": 31.15
   }
 ]

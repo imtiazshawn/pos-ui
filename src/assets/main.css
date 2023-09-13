@@ -259,8 +259,12 @@ header {
   margin-top: 4.5rem;
   margin-left: 1rem;
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  overflow-y: auto;
+  /* height: calc(100vh - 12rem); */
 }
 
 .products__footer {
@@ -436,16 +440,15 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  position: relative;
 }
 
 .product h3 {
-  position: absolute;
   font-size: 15px;
   font-weight: 500;
   margin-top: 5px;
   bottom: 2;
   left: 30%;
+  text-align: center;
 }
 
 .product img {
@@ -663,7 +666,7 @@ header {
 }
 .cartDetails__footer-topbar li:nth-child(4) {
   position: absolute;
-  left: 92%;
+  left: 90%;
 }
 
 .cartDetails__footer-bottombar {
@@ -704,7 +707,7 @@ header {
 }
 .cartDetails__footer-bottombar li:nth-child(4) {
   position: absolute;
-  left: 92%;
+  left: 90%;
 }
 
 .cartDetails__footer-discount {
