@@ -50,7 +50,7 @@
 export default {
   data() {
     return {
-      formattedDate: "",
+      formattedDate: '',
     };
   },
   mounted() {
@@ -61,8 +61,8 @@ export default {
     updateDateTime() {
       const currentDate = new Date();
       const months = [
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
       ];
 
       const year = currentDate.getFullYear();
@@ -71,11 +71,12 @@ export default {
       const hours = currentDate.getHours();
       const minutes = currentDate.getMinutes();
       const seconds = currentDate.getSeconds();
-      const ampm = hours >= 12 ? "PM" : "AM";
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      const formattedHours = hours % 12 || 12;
 
-      this.formattedDate = `${month} ${day}, ${year}, ${this.formatTime(
-        hours
-      )}:${this.formatTime(minutes)}:${this.formatTime(seconds)} ${ampm}`;
+      this.formattedDate = `${month} ${day}, ${year}, ${formattedHours}:${this.formatTime(
+        minutes
+      )}:${this.formatTime(seconds)} ${ampm}`;
     },
     formatTime(time) {
       return time < 10 ? `0${time}` : time;

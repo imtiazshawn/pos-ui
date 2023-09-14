@@ -3,7 +3,12 @@
     <div class="cart__nav">
         <div class="cart__nav-left">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#888888" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88a9.947 9.947 0 0 1 12.28 0C16.43 19.18 14.03 20 12 20z"/></svg>
-            <span class="paragraph-text">Walking Customer (170000000)</span>
+            <input
+                type="text"
+                v-model="selectedOption"
+                @click="showOptions = !showOptions"
+                placeholder="Walking Customer (170000000)"
+            />
         </div>
         <div class="cart__nav-right">
             <div class="nav-right-item01">
@@ -26,6 +31,15 @@
 
     <!-- Cart Body -->
     <div class="cart__body">
+        <ul v-if="showOptions" class="customer_dropdown">
+            <li
+                v-for="option in options"
+                :key="option.value"
+                @click="selectOption(option.value)"
+            >
+                {{ option.value }}
+            </li>
+        </ul>
         <CartDetails />
     </div>
 
@@ -81,8 +95,16 @@
 <script>
 import CartDetails from './CartDetails.vue';
 import { useCartStore } from '@/stores/cart';
+import optionsData from '../api/selectCustomer.json';
 
 export default {
+  data() {
+    return {
+      options: optionsData,
+      selectedOption: '',
+      showOptions: false,
+    };
+  },
   components: {
     CartDetails,
   },
@@ -99,6 +121,12 @@ export default {
     subtotal() {
       const cartStore = useCartStore();
       return cartStore.subtotal;
+    },
+  },
+  methods: {
+    selectOption(option) {
+      this.selectedOption = option;
+      this.showOptions = false;
     },
   },
 };
