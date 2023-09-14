@@ -64,5 +64,23 @@
     "name": "Cherry",
     "image": "/cherry.png",
     "price": 31.15
+  },
+  {
+    "id": 12,
+    "name": "Kiwi",
+    "image": "/kiwi.png",
+    "price": 58.28
+  },
+  {
+    "id": 13,
+    "name": "Papaya",
+    "image": "/papaya.png",
+    "price": 141.58
+  },
+  {
+    "id": 14,
+    "name": "Pear",
+    "image": "/pear.png",
+    "price": 34.05
   }
 ]
